@@ -20,7 +20,7 @@ app.engine('html', engines.mustache);
 app.set('view engine', 'html');
 
 // 기본 path를 /public으로 설정(css, javascript 등의 파일 사용을 위해)
-app.use(express.static('/public'));
+app.use(express.static('public'));
 app.use(express.static('views'));
 app.use('/', indexRouter);
 
