@@ -1,3 +1,9 @@
+.bn {
+    float: right;
+    text-align: center;
+    z-index: 1000;
+    position: fixed;
+}
 
 * {
     margin: 0;
@@ -30,6 +36,7 @@ a:link, a:link:active, a:visited, a:visited:active {
     display: inline-block;
     vertical-align: top;
 }
+
 img {
     vertical-align: top;
 }

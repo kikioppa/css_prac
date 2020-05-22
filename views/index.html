@@ -8,158 +8,16 @@
 </head>
 
 <script>
-    var a = document.getElementById('wrap');
-    var b = document.getElementById('header');
-    console.log(a, b);
-    (function(window) {
-        var wrap = null;
-        var header = null;
-        var headerName = null;
 
-        var onScrollChange = function() {
-            var is_bottom = wrap.scrollHeight - wrap.offsetHeight === wrap.scrollTop;
-            if (wrap.scrollTop > 200) {
-                header.className = headerName + ' a';
-            } else {
-                header.className = headerName;
-            }
-            console.log('aaa');
-        };
-        window.addEventListener('scrollY',function (e) {
-            console.log('scrollY'+scrollY);
-        })
-        var init = function() {
-            wrap = document.getElementById('wrap');
-            header = document.getElementById('header');
-
-            console.log(wrap,header);
-            headerName = header.className;
-            wrap.addEventListener('scroll', function(e) {
-                onScrollChange();
-            });
-            // header.addEventListener('click', aa);
-        };
-        window.addEventListener('load', init);
-    })(window);
-    function aa() {
-        console.log('aa');
-    }
 </script>
 <body>
-<div class="wrap" id="wrap">
-
-    <div class="header" id="header" onclick="aa()">
-        <div class="logo">
-            <span>
-                <a href="#SAINT-MICHEL"><img src="/images/champ.png" alt="SAINT-MICHEL"></a>
-            </span>
-        </div>
-        <div class="gnb_wrap">
-            <ul>
-                <li>
-                    <a href="#SAINT-MICHEL">
-                        SAINT-MICHEL
-                    </a>
-                </li>
-                <li>
-                    <a href="#LOUVRE">
-                        LOUVRE
-                    </a>
-                </li>
-                <li>
-                    <a href="#SEINE">
-                        SEINE
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-    <!--컨텐츠1 끗! -->
-
-    <!--contents 1 시작-->
-    <div class="content_layer v_full p_v_90" id="SAINT-MICHEL">
-        <div class="main_background_video_wrapper">
-            <video autoplay loop muted poster="/images/racoonman.jpg" class="main_background_video">
-                <source src="/images/paris.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="content_wrapper">
-            <div class="content">
-                <div class="float_content left">
-                    <div class="text s_68 p_b_65 lh_110 w_700">
-                        Le<br>
-                        DEPART<br>
-
-                        SAINT-MICHEL<br>
-                    </div>
-                    <div class="text black_alpha_50 lh_190 w_300">
-                        paris
-                    </div>
-                </div>
-                <div class="text s_15 lh_170 intro colored_pink">
-                    소고기 부르기뇽<br>
-                    망나뇽 미뇽</br>
-                    빠리 가성비 맛집 1순위<br>
-                    구야시 해장국<br>
-                    카술레 된장국 <br>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    <!--contents 2 -->
-    <div class="content_layer v_full p_v_90" id="LOUVRE">
-        <div class="main_background_video_wrapper">
-            <video autoplay loop muted poster="/images/racoonman.jpg" class="main_background_video">
-                <source src="/images/louvre.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="content_wrapper">
-            <div class="content">
-                <div class="float_content left">
-                    <div class="text s_68 p_b_65 lh_110 w_700">
-                        LOUVRE<br>
-                        MUSEUM<br>
-                        PARIS <br>
-                    </div>
-                    <div class="text black_alpha_50 lh_190 w_300">
-                        paris
-                    </div>
-                </div>
-                <div class="text s_15 lh_170 intro colored_dark">
-                    루부루 박물관<br>
-                    김홍도 전시회 5월부터 9월까지</br>
-                    기안 귀귀 전시회 10월부터<br>
-                    주말 및 공휴일 입장불가<br>
-                    주차요금 30분에 5만원 10분 추가시 1만원 추가비용<br>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    <!-- contents3-->
-    <div class="content_layer v_full p_v_90" id="SEINE">
-        <div class="main_background_video_wrapper">
-            <video autoplay loop muted poster="/images/racoonman.jpg" class="main_background_video">
-                <source src="/images/seine.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="content_wrapper">
-            <div class="content">
-                <div class="float_content left">
-                    <div class="text s_68 p_b_65 lh_110 w_700">
-                        SEINE<br>
-                        RIVER<br>
-                    </div>
-                    <div class="text black_alpha_50 lh_190 w_300">
-                        paris
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
+<div title="게시판 전체를 감싸는 div" id="board_wrapper">
+<!--        <div title="게시물 한줄">-->
+<!--            <div title="게시물 아이디"></div>-->
+<!--            <div title="게시물 제목"></div>-->
+<!--            <div title="게시물 작성자"></div>-->
+<!--            <div title="게시 날짜"></div>-->
+<!--        </div>-->
 </div>
 </body>
 
