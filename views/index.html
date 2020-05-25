@@ -5,20 +5,43 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <script>
 
+
+    window.onload = function () {
+        let btn = document.getElementById("btn")
+        btn.addEventListener("click", btng);
+
+        function btng() {
+            console.log('냥 불러옴');
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:3000/bbs",
+                dataType: "JSON",
+                error: function () {
+                    alert("실패");
+                },
+                success: function (data) {
+                    console.log('성공');
+                    console.log(data);
+                    alert(data[0].content);
+
+                }
+
+            })
+        };
+
+    }
 </script>
 <body>
-<div title="게시판 전체를 감싸는 div" id="board_wrapper">
-<!--        <div title="게시물 한줄">-->
-<!--            <div title="게시물 아이디"></div>-->
-<!--            <div title="게시물 제목"></div>-->
-<!--            <div title="게시물 작성자"></div>-->
-<!--            <div title="게시 날짜"></div>-->
-<!--        </div>-->
+<div title="메인 버튼" id="main_btn">
+    <button id="btn">게시물 리스트 보기 <>><><><></button>
+
 </div>
+
 </body>
 
 </html>

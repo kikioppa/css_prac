@@ -7,7 +7,7 @@ var logger = require('morgan');
 
 // router 설정
 var indexRouter = require('./routes/index');
-
+var usersRouter = require('./routes/users');
 let bbs = [
     {
         id: 1,
@@ -48,14 +48,14 @@ app.use(express.urlencoded({extended: false}));
 app.set('views', __dirname + '/views');
 
 // 화면 engine을 html로 설정
-app.engine('html', engines.mustache);
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 // 기본 path를 /public으로 설정(css, javascript 등의 파일 사용을 위해)
 app.use(express.static('public'));
 app.use(express.static('views'));
 app.use('/', indexRouter);
-
+app.use('/users', usersRouter);
 
 app.get('/bbs', (req, res) => {
     return res.json(bbs);
