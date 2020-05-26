@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script>
+
+
+    window.onload = function () {
+        let btn = document.getElementById("ff");
+        btn.addEventListener("click", ee);
+
+
+        function ee() {
+            console.log("ff");
+        .
+            $ajax({
+                type: "post",
+                url: "ggg",
+                dataType: "json",
+                error: function () {
+                    alert("ff");
+                },
+                success: function (data) {
+
+                    createList(data);
+                }
+
+            })
+        }
+
+
+        function createList(data) {
+            const board_body = document.getElementById("board_body");
+
+
+            for (let i = 0; i < data.length; i++) {
+                const data_row = data[i]
+                appendBoard(board_body, data_row);
+            }
+        }
+
+        function appendBoard(board_body, data_row) {
+            const td_id = document.createElement("td");
+
+            td_id.innerHTML=data_row.id
+        }
+
+
+    }
+
+
+</script>
+<body>
+
+<tbody id="board_body">
+
+
+</tbody>
+</body>
+</html>

@@ -11,28 +11,28 @@ var usersRouter = require('./routes/users');
 let bbs = [
     {
         id: 1,
-        subject: "제목1",
+        subject: "피카츄 식단 1번",
         writer: "피카츄",
         reg_date: "2020-05-20",
         content: "오늘점심은\n김치찌개\n맛없습니다"
     },
     {
         id: 2,
-        subject: "제목2",
+        subject: "꼬부기 식단 2번",
         writer: "꼬부기",
         reg_date: "2020-05-21",
         content: "오늘점심은\n부대찌개\n또 맛없습니다"
     },
     {
         id: 3,
-        subject: "제목3",
+        subject: "파이리 식단 3번",
         writer: "파이리",
         reg_date: "2020-05-22",
         content: "오늘점심은\n순부두찌개\n진짜 맛없습니다"
     },
     {
         id: 4,
-        subject: "제목4",
+        subject: "또가스 식단 4번",
         writer: "또가스",
         reg_date: "2020-05-23",
         content: "오늘점심은\n보신탕\n이번엔 맛있습니다."

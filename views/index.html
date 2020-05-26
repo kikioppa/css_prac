@@ -15,6 +15,55 @@
         let btn = document.getElementById("btn")
         btn.addEventListener("click", btng);
 
+        function appendBoardRow(board_body, data_row) {
+            const td_id = document.createElement("td")
+            const td_subject=document.createElement("td")
+            const td_writer=document.createElement("td")
+            const td_reg_date=document.createElement("td")
+            // <td></td>
+            td_id.innerHTML = data_row.id
+            td_subject.innerHTML = data_row.subject
+            td_writer.innerHTML = data_row.writer
+            td_reg_date.innerHTML = data_row.reg_date
+            // <td>{data_row.id}</td>
+            // <td>2</td>
+
+            // <td><span color=red>1</span></td>
+            //  class 지정, 속성 추가, 아이디 지정, 내용 추가
+
+
+            const tr = document.createElement("tr")
+            // <tr></tr>
+            tr.appendChild(td_id)
+            tr.appendChild(td_subject)
+            tr.appendChild(td_writer)
+            tr.appendChild(td_reg_date)
+
+
+            // <tr>
+            //         <td>2</td>
+            // </tr>
+
+            board_body.appendChild(tr)
+        }
+
+        function createList(data) {
+            const board_body = document.getElementById("board_body")
+            // for(변수초기화; 조건문; 구문 실행 후 실행 보통 증감) {
+            //
+            // }
+            for (let i = 0; i < data.length; i++) {
+                const data_row = data[i]
+                console.log(i, data_row)
+                appendBoardRow(board_body, data_row)
+            }
+
+
+            // for (let i = data.length -1 ; i >= 0;  i--) {
+            //
+            // }
+        }
+
         function btng() {
             console.log('냥 불러옴');
             $.ajax({
@@ -29,10 +78,11 @@
                     console.log(data);
                     alert(data[0].content);
 
+                    createList(data);
                 }
 
             })
-        };
+        }
 
     }
 </script>
@@ -40,6 +90,27 @@
 <div title="메인 버튼" id="main_btn">
     <button id="btn">게시물 리스트 보기 <>><><><></button>
 
+</div>
+
+<div title="게시판 전체를 감싸는 div" id="board_wrapper">
+    <table border="1">
+        <thead>
+        <tr>
+            <th title="게시물 아이디">번호</th>
+            <th title="게시물 제목">제목</th>
+            <th title="게시물 작성자">작성자</th>
+            <th title="게시 날짜">날짜</th>
+        </tr>
+        </thead>
+        <tbody id="board_body">
+        <!--            <tr>-->
+        <!--                <td title="게시물 아이디">번호</td>-->
+        <!--                <td title="게시물 제목">제목</td>-->
+        <!--                <td title="게시물 작성자">작성자</td>-->
+        <!--                <td title="게시 날짜">날짜</td>-->
+        <!--            </tr>-->
+        </tbody>
+    </table>
 </div>
 
 </body>
