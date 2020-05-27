@@ -17,19 +17,32 @@
 
         function appendBoardRow(board_body, data_row) {
             const td_id = document.createElement("td")
-            const td_subject=document.createElement("td")
-            const td_writer=document.createElement("td")
-            const td_reg_date=document.createElement("td")
+            const td_subject = document.createElement("td")
+            const td_writer = document.createElement("td")
+            const td_reg_date = document.createElement("td")
             // <td></td>
             td_id.innerHTML = data_row.id
             td_subject.innerHTML = data_row.subject
             td_writer.innerHTML = data_row.writer
             td_reg_date.innerHTML = data_row.reg_date
+
             // <td>{data_row.id}</td>
             // <td>2</td>
 
             // <td><span color=red>1</span></td>
             //  class 지정, 속성 추가, 아이디 지정, 내용 추가
+            const subject = data_row.subject
+            td_subject.addEventListener('click', function () {
+                createContent()
+            })
+            const id = data_row.id
+            const content = data_row.content
+
+            function createContent() {
+                console.log(content);
+                const main_content = document.getElementById("main_content");
+                main_content.innerHTML = content
+            }
 
 
             const tr = document.createElement("tr")
@@ -44,8 +57,19 @@
             //         <td>2</td>
             // </tr>
 
+
+            /*     const rmv = document.getElementsByTagName("tr");
+
+            while (rmv.hasChildNodes()){
+                rmv.removeChild (rmv);
+            }*/
+
+
             board_body.appendChild(tr)
+
+
         }
+
 
         function createList(data) {
             const board_body = document.getElementById("board_body")
@@ -76,12 +100,23 @@
                 success: function (data) {
                     console.log('성공');
                     console.log(data);
-                    alert(data[0].content);
+
+                    removeList(data);
 
                     createList(data);
+
+
                 }
 
             })
+        }
+
+        function removeList() {
+
+            let cell = document.getElementById("board_body");
+            while (cell.hasChildNodes()) {
+                cell.removeChild(cell.firstChild);
+            }
         }
 
     }
@@ -111,6 +146,13 @@
         <!--            </tr>-->
         </tbody>
     </table>
+
+
+    <div class="main_content" id="main_content" style="color:#000000; width: 400px; height: 300px; background:#ffffff">
+
+        <a>test</a>
+
+    </div>
 </div>
 
 </body>
